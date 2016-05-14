@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# Using bower-rails gem because I'm lazy and it's great
+gem 'bower-rails'
 # Using Devise for user table/password encryption
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -18,6 +19,7 @@ gem 'hirb'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Using Angular in this app so there's a good chance Turbolinks will break this BTW
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
