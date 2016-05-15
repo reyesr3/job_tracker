@@ -1,6 +1,6 @@
 <div>
 	<h3>Opportunities</h3>
-	<table>
+	<table class='table table-hover table-bordered'>
 		<tr>
 			<th>Company</th>
 			<th>Position</th>
@@ -10,8 +10,8 @@
 			<th>Planned Followup</th>
 		</tr>
 		<tr ng-repeat='job in jobs'>
-			<td>{{job.company}}</td>
-			<td>{{job.position}}</td>
+			<td><a href='http://www.{{job.company_link}}' target='_blank'>{{job.company}}</a></td>
+			<td><a href='http://www.{{job.position_link}}' target='_blank'>{{job.position}}</a></td>
 			<td>{{job.app_date}}</td>
 			<td>{{job.resp_status}}</td>
 			<td>{{job.primary}}</td>

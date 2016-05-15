@@ -1,19 +1,19 @@
 <h2>Add a new Job Opportunity</h2>
 <div class='form-group'>
 	<label>Company Name</label>
-	<input type='text' ng-model='newJob.job.company' class='form-control'>
+	<input type='text' ng-model='newJob.job.company' class='form-control' placeholder='Company Name'>
 </div>
 <div class='form-group'>
-	<label>Company Website</label>
-	<input type='text' ng-model='newJob.job.company_link' class='form-control'>
+	<label>Company Website - DO NOT INCLUDE 'http://www.'</label>
+	<input type='text' ng-model='newJob.job.company_link' class='form-control' placeholder='companyname.com'>
 </div>
 <div class='form-group'>
 	<label>Position Applying For</label>
-	<input type='text' ng-model='newJob.job.position' class='form-control'>
+	<input type='text' ng-model='newJob.job.position' class='form-control' placeholder="Ex: Junior Software Engineer">
 </div>
 <div class='form-group'>
-	<label>Job Posting</label>
-	<input type='text' ng-model='newJob.job.position_link' class='form-control'>
+	<label>Job Posting - DO NOT INCLUDE 'http://www.'</label>
+	<input type='text' ng-model='newJob.job.position_link' class='form-control' placeholder='companyname.com/en/job-detail?'>
 </div>
 <div class='form-group'>
 	<label>Date Application Sent</label>
@@ -21,11 +21,11 @@
 </div>
 <div class='form-group'>
 	<label>Primary Contact</label>
-	<input type='text' ng-model='newJob.job.primary' class='form-control'>
+	<input type='text' ng-model='newJob.job.primary' class='form-control' placeholder='Ex: John Doe'>
 </div>
 <div class='form-group'>
 	<label>Planned Followup</label>
-	<textarea ng-model='newJob.job.nas' class='form-control'></textarea>
+	<textarea ng-model='newJob.job.nas' class='form-control' placeholder='Ex: Call Stacy in HR to verify she received my resume.'></textarea>
 </div>
 <div class='form-group'>
 	<label>Date of Planned Followup</label>
