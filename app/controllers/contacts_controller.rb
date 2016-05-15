@@ -1,5 +1,21 @@
 class ContactsController < ApplicationController
 	def index
-		render :json => Contact.all
+		render_contacts
 	end
+
+	def create
+		Contact.create(contact_params)
+		render_contacts
+	end
+
+	private
+
+		def render_contacts
+			render :json => Contact.all
+		end
+
+		def contact_params
+			params.require(:contact).permit(:first_name, :last_name, :title, :company, :contact_link, :how_met, :last_contacted, :nas, :nas_date)
+		end
+		
 end

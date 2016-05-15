@@ -7,7 +7,7 @@ app.controller('jobsController', function($scope, jobFactory){
 	$scope.createJob = function(){
 		jobFactory.create($scope.newJob, function(json){
 			$scope.jobs = json;
-			$scope.newPlayer = {};
+			$scope.newJob= {};
 		})
 	}
 })

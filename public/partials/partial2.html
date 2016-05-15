@@ -1,6 +1,6 @@
 <div>
 	<h3>Contacts</h3>
-	<table>
+	<table class='table table-hover table-bordered'>
 		<tr>
 			<th>Name</th>
 			<th>Company</th>
@@ -11,7 +11,7 @@
 		</tr>
 		<tr ng-repeat='contact in contacts'>
 			<td>{{contact.first_name}} {{contact.last_name}}</td>
-			<td>{{contact.company.name}}</td>
+			<td>{{contact.company}}</td>
 			<td>{{contact.title}}</td>
 			<td>{{contact.last_contacted}}</td>
 			<td>{{contact.resp_status}}</td>

@@ -5,5 +5,12 @@ app.factory('contactFactory', function($http){
 			callback(output);
 		})
 	}
+
+	factory.create = function(contactInfo, callback) {
+		$http.post('/contacts', contactInfo).success(function(output){
+			callback(output)
+		})
+	}
+
 	return factory;
 })
