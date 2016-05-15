@@ -1,4 +1,4 @@
-var app = angular.module('rsgApp', ['ngRoute']);
+/*var app = angular.module('rsgApp', ['ngRoute']);
 
 app.config(function($routeProvider, $httpProvider) {
 	$routeProvider
@@ -68,4 +68,4 @@ app.controller('contactsController', function($scope, contactFactory){
 	contactFactory.index(function(json){
 		$scope.contacts = json;
 	})
-})
+})*/
