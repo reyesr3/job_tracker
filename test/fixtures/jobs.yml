@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  position: MyString
+  app_date: 2016-05-14 16:37:12
+  resp_status: MyString
+  primary: MyString
+  nas_date: 2016-05-14 16:37:12
+  nas: MyText
+  company_link: MyText
+  position_link: MyText
+
+two:
+  company: MyString
+  position: MyString
+  app_date: 2016-05-14 16:37:12
+  resp_status: MyString
+  primary: MyString
+  nas_date: 2016-05-14 16:37:12
+  nas: MyText
+  company_link: MyText
+  position_link: MyText

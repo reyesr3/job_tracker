@@ -1,0 +1,21 @@
+<div>
+	<h3>Opportunities</h3>
+	<table>
+		<tr>
+			<th>Company</th>
+			<th>Position</th>
+			<th>Application Date</th>
+			<th>Response Y/N?</th>
+			<th>Primary Contact</th>
+			<th>Planned Followup</th>
+		</tr>
+		<tr ng-repeat='job in jobs'>
+			<td>{{job.company}}</td>
+			<td>{{job.position}}</td>
+			<td>{{job.app_date}}</td>
+			<td>{{job.resp_status}}</td>
+			<td>{{job.primary}}</td>
+			<td>{{job.nas_date}}</td>
+		</tr>
+	</table>
+</div>

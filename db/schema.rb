@@ -11,7 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514200849) do
+ActiveRecord::Schema.define(version: 20160514235500) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "title"
+    t.datetime "last_contacted"
+    t.string   "resp_status"
+    t.datetime "nas_date"
+    t.text     "nas"
+    t.string   "company"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+  end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "company"
+    t.string   "position"
+    t.datetime "app_date"
+    t.string   "resp_status"
+    t.string   "primary"
+    t.datetime "nas_date"
+    t.text     "nas"
+    t.text     "company_link"
+    t.text     "position_link"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "job_id"
+  end
+
+  add_index "jobs", ["job_id"], name: "index_jobs_on_job_id"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "relationships", ["contact_id"], name: "index_relationships_on_contact_id"
+  add_index "relationships", ["job_id"], name: "index_relationships_on_job_id"
+  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
