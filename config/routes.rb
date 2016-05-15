@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     root to: 'dashboards#index', as: :authenticated_root
   end
   root to: redirect('/users/sign_in')
+  get 'jobs' => 'jobs#index'
+  get 'contacts' => 'contacts#index'
+  post 'jobs' => 'jobs#create'
+  post 'contacts' => 'contacts#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
