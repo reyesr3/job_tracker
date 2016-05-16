@@ -13,5 +13,11 @@ app.factory('jobFactory', function($http){
 		})
 	}
 
+	factory.delete = function(jobID, callback) {
+		$http.delete('/jobs/'+jobID).success(function(output) {
+			callback(output)
+		})
+	}
+
 	return factory;
 })

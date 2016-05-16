@@ -10,4 +10,10 @@ app.controller('jobsController', function($scope, jobFactory){
 			$scope.newJob= {};
 		})
 	}
+
+	$scope.deleteJob = function(jobID){
+		jobFactory.delete(jobID, function(json) {
+			$scope.jobs = json;
+		})
+	}
 })
