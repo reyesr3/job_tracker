@@ -8,6 +8,7 @@
 			<th>Last Contacted</th>
 			<th>Response Y/N?</th>
 			<th>Planned Followup</th>
+			<th>Actions</th>
 		</tr>
 		<tr ng-repeat='contact in contacts'>
 			<td>{{contact.first_name}} {{contact.last_name}}</td>
@@ -16,6 +17,7 @@
 			<td>{{contact.last_contacted}}</td>
 			<td>{{contact.resp_status}}</td>
 			<td>{{contact.nas_date}}</td>
+			<td><button class="btn btn-primary" ng-click="deleteContact(contact.id)">Delete</button></td>
 		</tr>
 	</table>
 </div>

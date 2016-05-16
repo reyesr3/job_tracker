@@ -8,6 +8,11 @@ class ContactsController < ApplicationController
 		render_contacts
 	end
 
+	def destroy
+		Contact.find(params[:id]).destroy
+		render_contacts
+	end
+
 	private
 
 		def render_contacts

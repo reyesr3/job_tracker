@@ -9,4 +9,10 @@ app.controller('contactsController', function($scope, contactFactory){
 			$scope.newContact = {};
 		})
 	}
+
+	$scope.deleteContact = function(contactID){
+		contactFactory.delete(contactID, function(json) {
+			$scope.contacts = json;
+		})
+	}
 })

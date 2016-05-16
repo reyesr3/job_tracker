@@ -12,5 +12,11 @@ app.factory('contactFactory', function($http){
 		})
 	}
 
+	factory.delete = function(contactID, callback) {
+		$http.delete('/contacts/'+contactID).success(function(output) {
+			callback(output)
+		})
+	}
+
 	return factory;
 })
