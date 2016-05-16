@@ -17,7 +17,9 @@
 			<td>{{contact.last_contacted}}</td>
 			<td>{{contact.resp_status}}</td>
 			<td>{{contact.nas_date}}</td>
-			<td><button class="btn btn-primary" ng-click="deleteContact(contact.id)">Delete</button></td>
+			<td><button class="btn btn-success" ng-click="updateContact(contact.id)">Update</button>
+				<button class="btn btn-danger" ng-click="deleteContact(contact.id)">Delete</button>
+			</td>
 		</tr>
 	</table>
 </div>
