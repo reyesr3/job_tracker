@@ -18,10 +18,9 @@ app.factory('contactFactory', function($http, $location){
 		})
 	}
 
-	factory.getUser = function(contactID, callback){
+	factory.getContact = function(contactID, callback){
 		$http.get('/contacts/'+contactID).success(function(output){
-			callback(output)
-			$location.path('/contactShow')
+			callback(output);
 		})
 	}
 
