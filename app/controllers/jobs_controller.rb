@@ -7,6 +7,11 @@ class JobsController < ApplicationController
 		render_jobs
 	end
 
+	def destroy
+		Job.find(params[:id]).destroy
+		render_jobs
+	end
+
 	private
 
 		def render_jobs
