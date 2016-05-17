@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: redirect('/users/sign_in')
   get 'jobs' => 'jobs#index'
   get 'contacts' => 'contacts#index'
+  get 'contacts/:id' => 'contacts#show'
   post 'jobs' => 'jobs#create'
   post 'contacts' => 'contacts#create'
   delete 'contacts/:id' => 'contacts#destroy'
