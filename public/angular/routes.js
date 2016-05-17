@@ -1,5 +1,3 @@
-var app = angular.module('rsgApp', ['ngRoute']);
-
 app.config(function($routeProvider, $httpProvider) {
 	$routeProvider
 		.when('/partial1', {
