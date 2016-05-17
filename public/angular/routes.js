@@ -16,7 +16,7 @@ app.config(function($routeProvider, $httpProvider) {
 			templateUrl: '/partials/partial4.html',
 			controller: 'contactsController'
 		})
-		.when('/contactShow', {
+		.when('/contactShow/:id', {
 			templateUrl: 'partials/contactShow.html',
 			controller: 'contactsController'
 		})
