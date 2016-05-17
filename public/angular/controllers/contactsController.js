@@ -18,6 +18,7 @@ app.controller('contactsController', function($scope, contactFactory){
 
 	$scope.getUser = function(contactID){
 		contactFactory.getUser(contactID, function(json){
+			console.log(json)
 			$scope.contact = json;
 			console.log($scope.contact);
 		})
