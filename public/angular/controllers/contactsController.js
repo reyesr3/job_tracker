@@ -4,9 +4,11 @@ app.controller('contactsController', function($scope, contactFactory, $routePara
 		$scope.contacts = json;
 	})
 
+	// Used for show contact page
 	if($routeParams.id != undefined){
 		contactFactory.getContact($routeParams.id, function(json){
 			$scope.contact = json;
+			console.log(json)
 		})
 	}
 
