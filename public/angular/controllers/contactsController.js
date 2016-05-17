@@ -4,9 +4,11 @@ app.controller('contactsController', function($scope, contactFactory, $routePara
 		$scope.contacts = json;
 	})
 
-	contactFactory.getContact($routeParams.id, function(json){
-		$scope.contact = json;
-	})
+	if($routeParams.id != undefined){
+		contactFactory.getContact($routeParams.id, function(json){
+			$scope.contact = json;
+		})
+	}
 
 	$scope.createContact = function(){
 		contactFactory.create($scope.newContact, function(json){
