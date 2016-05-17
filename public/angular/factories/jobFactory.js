@@ -13,5 +13,19 @@ app.factory('jobFactory', function($http){
 		})
 	}
 
+	factory.editJob = function(id, callback) {
+		$http.get('/jobs/'+id+'/edit').success(function(data) {
+			console.log(data);
+			callback(data);
+		})
+
+	}
+
+
+	// factory.update = function(jobInfo, callback) {
+	// 	$http.post('/jobs/update', jobInfo).success(function(output){
+	// 		callback(output)
+	// 	})
+	// }
 	return factory;
 })

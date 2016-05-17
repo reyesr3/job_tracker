@@ -6,7 +6,15 @@ class JobsController < ApplicationController
 		Job.create(job_params)
 		render_jobs
 	end
+	def edit
+		Job.find(1)
 
+	end
+	# def update
+	# 	Opp = Job.find(params[:id])
+	# 	Opp.update(job_params)
+	# 	render_jobs
+	# end
 	private
 
 		def render_jobs

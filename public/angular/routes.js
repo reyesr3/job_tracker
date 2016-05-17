@@ -16,6 +16,18 @@ app.config(function($routeProvider, $httpProvider) {
 		})
 		.when('/partial4',{
 			templateUrl: '/partials/partial4.html',
+			controller: 'contactsController'			
+		})
+		.when('/jobs/:id/edit',{
+			templateUrl: '/jobs/edit.html',
+			controller: 'jobsController'
+		})
+		.when('/jobs/:id/update',{
+			templateUrl: '/jobs/edit.html',
+			controller: 'jobsController'
+		})
+		.when('/contacts/:id/edit',{
+			templateUrl: '/contacts/edit.html',
 			controller: 'contactsController'
 		})
 

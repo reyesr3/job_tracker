@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Job Opportunity</title>
+</head>
+<body>
+	<h2>Update Job Opportunity</h2>
+	<h1>{{ job.company }} </h1>
+	<div class='form-group'>
+		<label>Company Name</label>
+		<input type='text' ng-model='updateJob.job.company' class='form-control' placeholder='{{ company }}'>
+	</div>
+	<div class='form-group'>
+		<label>Company Website - DO NOT INCLUDE 'http://www.'</label>
+		<input type='text' ng-model='updateJob.job.company_link' class='form-control'
+		placeholder='companyname.com'>
+	</div>
+	<div class='form-group'>
+		<label>Position Applying For</label>
+		<input type='text' ng-model='updateJob.job.position' class='form-control'
+		placeholder='companyname/details'>
+	</div>
+	<div class='form-group'>
+		<label>Job Posting - DO NOT INCLUDE 'http://www.'</label>
+		<input type='text' ng-model='updateJob.job.position_link'
+		placeholder='jobpostinglink'>
+	</div>
+	<div class='form-group'>
+		<label>Date Application Sent</label>
+		<input type='text' ng-model='updateJob.job.app_date' class='form-control'
+		placeholder='application date'>
+	</div>
+	<div class='form-group'>
+		<label>Primary Contact</label>
+		<input type='text' ng-model='updateJob.job.primary' class='form-control'
+		placeholder='primary contact'>
+	</div>
+	<div class='form-group'>
+		<label>Planned Followup</label>
+		<input type='text' ng-model='updateJob.job.nas' class='form-control'
+		placeholder='planned followup'>
+	</div>
+	<div class='form-group'>
+		<label>Date of Planned Followup</label>
+		<input type='text' ng-model='updateJob.job.nas_date' class='form-control'
+		placeholder='date of followup'>
+	</div>
+	<div class='form-group'>
+		<button class='btn btn-primary btn-lg' ng-click="updateJob(jobInfo)">Update</button>
+	</div>
+</body>
+</html>
