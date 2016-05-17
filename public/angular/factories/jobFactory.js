@@ -13,6 +13,7 @@ app.factory('jobFactory', function($http){
 		})
 	}
 
+<<<<<<< HEAD
 	factory.editJob = function(id, callback) {
 		$http.get('/jobs/'+id+'/edit').success(function(data) {
 			console.log(data);
@@ -27,5 +28,13 @@ app.factory('jobFactory', function($http){
 	// 		callback(output)
 	// 	})
 	// }
+=======
+	factory.delete = function(jobID, callback) {
+		$http.delete('/jobs/'+jobID).success(function(output) {
+			callback(output)
+		})
+	}
+
+>>>>>>> c54fdcd3865f1ed1e435de2b12497b2f1ba84b34
 	return factory;
 })

@@ -9,12 +9,20 @@ class JobsController < ApplicationController
 	def edit
 		Job.find(1)
 
+<<<<<<< HEAD
 	end
 	# def update
 	# 	Opp = Job.find(params[:id])
 	# 	Opp.update(job_params)
 	# 	render_jobs
 	# end
+=======
+	def destroy
+		Job.find(params[:id]).destroy
+		render_jobs
+	end
+
+>>>>>>> c54fdcd3865f1ed1e435de2b12497b2f1ba84b34
 	private
 
 		def render_jobs

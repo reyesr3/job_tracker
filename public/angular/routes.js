@@ -30,6 +30,10 @@ app.config(function($routeProvider, $httpProvider) {
 			templateUrl: '/contacts/edit.html',
 			controller: 'contactsController'
 		})
+		.when('/contactShow/:id', {
+			templateUrl: 'partials/contactShow.html',
+			controller: 'contactsController'
+		})
 
 		$httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 });

@@ -1,7 +1,16 @@
-app.controller('contactsController', function($scope, contactFactory){
+app.controller('contactsController', function($scope, contactFactory, $routeParams){
+
 	contactFactory.index(function(json){
 		$scope.contacts = json;
 	})
+
+	// Used for show contact page
+	if($routeParams.id != undefined){
+		contactFactory.getContact($routeParams.id, function(json){
+			$scope.contact = json;
+			console.log(json)
+		})
+	}
 
 	$scope.createContact = function(){
 		contactFactory.create($scope.newContact, function(json){

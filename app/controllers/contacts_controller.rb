@@ -8,6 +8,10 @@ class ContactsController < ApplicationController
 		render_contacts
 	end
 
+	def show
+		render json: Contact.find(params[:id]) 
+	end
+
 	def destroy
 		Contact.find(params[:id]).destroy
 		render_contacts
@@ -21,6 +25,5 @@ class ContactsController < ApplicationController
 
 		def contact_params
 			params.require(:contact).permit(:first_name, :last_name, :title, :company, :contact_link, :how_met, :last_contacted, :nas, :nas_date)
-		end
-		
+		end	
 end

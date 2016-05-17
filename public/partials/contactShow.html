@@ -1,0 +1,14 @@
+<div>
+	<h3>First Name: {{contact.first_name}}</h3>
+	<h3>Last Name: {{contact.last_name}}</h3>
+	<h3>Contact's Title: {{contact.title}}</h3>
+	<h3>Contact's Company Name: {{contact.company}}</h3>
+	<h3>Contact's Linkedin: {{contact.contact_link}}</h3>
+	<h3>How did you meet your contact? {{contact.how_met}}</h3>
+	<h3>First Contacted Date: {{contact.last_contacted}}</h3>
+	<h3>Date of Planned Followup: {{contact.nas_date}}</h3>
+	<h3>Response Status: {{contact.resp_status}}</h3>
+	<div class='form-group'>
+		<button class='btn btn-success btn-lg' ng-click='updateContact(contact.id)'>Update Contact</button>
+	</div>
+</div>

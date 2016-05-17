@@ -16,6 +16,7 @@ app.controller('jobsController', function($scope, jobFactory){
 			$scope.jobs = json;
 		})
 	}
+<<<<<<< HEAD
 
 	$scope.editJob = function (data) {
 		jobFactory.editJob($scope.job, function(data) {
@@ -29,4 +30,6 @@ app.controller('jobsController', function($scope, jobFactory){
 			$scope.updateJob = {};
 		})
 	}
+=======
+>>>>>>> c54fdcd3865f1ed1e435de2b12497b2f1ba84b34
 })
