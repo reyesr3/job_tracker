@@ -1,6 +1,11 @@
-app.controller('contactsController', function($scope, contactFactory){
+app.controller('contactsController', function($scope, contactFactory, $routeParams){
+
 	contactFactory.index(function(json){
 		$scope.contacts = json;
+	})
+
+	contactFactory.getContact($routeParams.id, function(json){
+		$scope.contact = json;
 	})
 
 	$scope.createContact = function(){
@@ -16,10 +21,4 @@ app.controller('contactsController', function($scope, contactFactory){
 		})
 	}
 
-	$scope.getUser = function(contactID){
-		contactFactory.getUser(contactID, function(json){
-			$scope.contact = json;
-			console.log($scope.contact);
-		})
-	}
 })
