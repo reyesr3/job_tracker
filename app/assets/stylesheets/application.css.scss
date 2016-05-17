@@ -13,4 +13,47 @@
  *= require_tree .
  *= require_self
  *= require 'bootstrap-sass-official'
- */
+*/
+/*@import "bootstrap-sprockets";
+@import "bootstrap";*/
+*{
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.background-full-screen{
+  background: url(nightblue.jpg) no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  form{
+    width: 300px;
+    input{
+      text-align: center;
+    }
+  }
+}
+
+footer {
+	text-align: center;
+}
+
+.light-text {
+	color: white
+}

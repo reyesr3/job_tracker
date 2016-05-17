@@ -7,21 +7,9 @@
   <%= javascript_include_tag '/angular/config.js','/angular/routes.js', '/angular/controllers/contactsController.js', '/angular/controllers/jobsController.js', '/angular/factories/contactFactory.js', '/angular/factories/jobFactory.js' %>
   <%= csrf_meta_tags %>
 </head>
-<body class='container'>
-	<nav class='navbar navbar-light' style='background-color: #799AAE;'>
-		<div class='navbar-header'>
-			<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar'>
-			</button>
-			<a class='navbar-brand' href='#' style='color: #062E43;'>RSG Tracker</a>
-		</div>
-		<div id='navbar' class='navbar-collapse collapse' aria-expanded='false' style='height: 1px;'>
-			<ul class='nav navbar-nav'>
-				<% if current_user.present? %>
-					<li><%= link_to "Log Out", destroy_user_session_path, style: 'color:#062E43;', method: :delete %></li>
-				<% end %>
-			</ul>
-		</div>
-	</nav>
+<body>
+
+	<%= render 'nav.html.erb' %>
 
 	<% if notice.present? %>
 		<div class='alert alert-info'>
@@ -34,7 +22,8 @@
 		</div>
 	<% end %>
 
-<%= yield %>
+	<%= yield %>
 
+	<%= render 'footer.html.erb' %>
 </body>
 </html>
