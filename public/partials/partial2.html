@@ -11,14 +11,14 @@
 			<th>Actions</th>
 		</tr>
 		<tr ng-repeat='contact in contacts'>
-			<td>{{contact.first_name}} {{contact.last_name}}</td>
+			<td><a href='' ng-click="getUser(contact.id)">{{contact.first_name}} {{contact.last_name}}</a></td>
 			<td>{{contact.company}}</td>
 			<td>{{contact.title}}</td>
 			<td>{{contact.last_contacted}}</td>
 			<td>{{contact.resp_status}}</td>
 			<td>{{contact.nas_date}}</td>
-			<td><button class="btn btn-success" ng-click="updateContact(contact.id)">Update</button>
-				<button class="btn btn-danger" ng-click="deleteContact(contact.id)">Delete</button>
+			<td><button class='btn btn-success' ng-click='updateContact(contact.id)'>Update</button>
+				<button class='btn btn-danger' ng-click='deleteContact(contact.id)'>Delete</button>
 			</td>
 		</tr>
 	</table>

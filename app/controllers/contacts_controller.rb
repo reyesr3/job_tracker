@@ -8,6 +8,11 @@ class ContactsController < ApplicationController
 		render_contacts
 	end
 
+	def show
+		user = Contact.find(params[:id])
+		render json: user
+	end
+
 	def destroy
 		Contact.find(params[:id]).destroy
 		render_contacts

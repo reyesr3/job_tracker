@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   root to: redirect('/users/sign_in')
   get 'jobs' => 'jobs#index'
   get 'contacts' => 'contacts#index'
+  get 'contacts/:id' => 'contacts#show'
   post 'jobs' => 'jobs#create'
   post 'contacts' => 'contacts#create'
   delete 'contacts/:id' => 'contacts#destroy'
+  delete 'jobs/:id' => 'jobs#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

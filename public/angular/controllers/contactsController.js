@@ -15,4 +15,11 @@ app.controller('contactsController', function($scope, contactFactory){
 			$scope.contacts = json;
 		})
 	}
+
+	$scope.getUser = function(contactID){
+		contactFactory.getUser(contactID, function(json){
+			$scope.contact = json;
+			console.log($scope.contact);
+		})
+	}
 })
