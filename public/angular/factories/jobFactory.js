@@ -20,7 +20,6 @@ app.factory('jobFactory', function($http, $routeParams){
 	}
 
 	factory.update = function(id, jobInfo, callback) {
-		console.log(jobInfo);
 		$http.post('/jobs/'+id, jobInfo).success(function(output){
 			callback(output)
 		})

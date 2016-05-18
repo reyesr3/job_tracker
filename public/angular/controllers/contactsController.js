@@ -8,7 +8,6 @@ app.controller('contactsController', function($scope, contactFactory, $routePara
 	if($routeParams.id != undefined){
 		contactFactory.getContact($routeParams.id, function(json){
 			$scope.contact = json;
-			console.log(json)
 		})
 	}
 

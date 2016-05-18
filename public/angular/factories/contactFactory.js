@@ -16,7 +16,6 @@ app.factory('contactFactory', function($http, $location){
 		})
 	}
 	factory.update = function(id, contactInfo, callback) {
-		console.log(contactInfo);
 		$http.post('/contacts/'+id, contactInfo).success(function(output){
 			callback(output)
 		})
