@@ -9,9 +9,9 @@
 		<a class='navbar-brand' href='#' style='color: #062E43;'>RSG Tracker</a>
 	</div>
 	<div id='navbar' class='navbar-collapse collapse' aria-expanded='false' style='height: 1px;'>
-		<ul class='nav navbar-nav'>
+		<ul class='nav navbar-nav navbar-right'>
 			<% if current_user.present? %>
-				<li><%= link_to "Log Out", destroy_user_session_path, style: 'color:#062E43;', method: :delete %></li>
+				<li><button class="btn-default btn-lg"><%= link_to "Log Out", destroy_user_session_path, style: 'color:#062E43;', method: :delete %></button></li>
 			<% end %>
 		</ul>
 	</div>
