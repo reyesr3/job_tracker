@@ -1,8 +1,14 @@
 // Controller Time
-app.controller('jobsController', function($scope, jobFactory){
+app.controller('jobsController', function($scope, jobFactory, $routeParams, $location){
 	jobFactory.index(function(json){
 		$scope.jobs = json;
 	})
+
+	if($routeParams.id != undefined){
+		jobFactory.edit($routeParams.id, function(json){
+			$scope.job = json;
+		})
+	}
 
 	$scope.createJob = function(){
 		jobFactory.create($scope.newJob, function(json){
@@ -11,25 +17,18 @@ app.controller('jobsController', function($scope, jobFactory){
 		})
 	}
 
+	$scope.updateJob = function(jobID){
+		jobFactory.update(jobID, $scope.updateJobInfo, function(json){
+			$scope.updateJobInfo = {};
+			$location.path('/partial1')
+			$scope.message = "Job has been updated!";
+		})
+	}
+
 	$scope.deleteJob = function(jobID){
 		jobFactory.delete(jobID, function(json) {
 			$scope.jobs = json;
 		})
 	}
-<<<<<<< HEAD
 
-	$scope.editJob = function (data) {
-		jobFactory.editJob($scope.job, function(data) {
-		$scope.job = data.data;
-	})
-	}
-
-	$scope.updateJob = function(){
-		jobFactory.update($scope.updateJob, function(json){
-			$scope.jobs = json;
-			$scope.updateJob = {};
-		})
-	}
-=======
->>>>>>> c54fdcd3865f1ed1e435de2b12497b2f1ba84b34
 })

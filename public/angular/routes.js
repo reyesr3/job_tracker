@@ -19,15 +19,15 @@ app.config(function($routeProvider, $httpProvider) {
 			controller: 'contactsController'			
 		})
 		.when('/jobs/:id/edit',{
-			templateUrl: '/jobs/edit.html',
+			templateUrl: '/partials/jobEdit.html',
 			controller: 'jobsController'
 		})
-		.when('/jobs/:id/update',{
-			templateUrl: '/jobs/edit.html',
+		.when('/jobShow/:id', {
+			templateUrl: 'partials/jobShow.html',
 			controller: 'jobsController'
 		})
 		.when('/contacts/:id/edit',{
-			templateUrl: '/contacts/edit.html',
+			templateUrl: '/partials/contactEdit.html',
 			controller: 'contactsController'
 		})
 		.when('/contactShow/:id', {

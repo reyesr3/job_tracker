@@ -1,5 +1,5 @@
 // Factory Time
-app.factory('jobFactory', function($http){
+app.factory('jobFactory', function($http, $routeParams){
 	var factory = {};
 	factory.index = function(callback) {
 		$http.get('/jobs').success(function(output){
@@ -13,28 +13,24 @@ app.factory('jobFactory', function($http){
 		})
 	}
 
-<<<<<<< HEAD
-	factory.editJob = function(id, callback) {
-		$http.get('/jobs/'+id+'/edit').success(function(data) {
-			console.log(data);
-			callback(data);
+	factory.edit = function(id, callback) {
+		$http.get('/jobs/'+id+'/edit').success(function(output) {
+			callback(output);
 		})
-
 	}
 
+	factory.update = function(id, jobInfo, callback) {
+		console.log(jobInfo);
+		$http.post('/jobs/'+id, jobInfo).success(function(output){
+			callback(output)
+		})
+	}
 
-	// factory.update = function(jobInfo, callback) {
-	// 	$http.post('/jobs/update', jobInfo).success(function(output){
-	// 		callback(output)
-	// 	})
-	// }
-=======
 	factory.delete = function(jobID, callback) {
 		$http.delete('/jobs/'+jobID).success(function(output) {
 			callback(output)
 		})
 	}
 
->>>>>>> c54fdcd3865f1ed1e435de2b12497b2f1ba84b34
 	return factory;
 })
