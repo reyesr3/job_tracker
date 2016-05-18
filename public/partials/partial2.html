@@ -14,9 +14,9 @@
 			<td><a href='#/contactShow/{{contact.id}}'>{{contact.first_name}} {{contact.last_name}}</a></td>
 			<td>{{contact.company}}</td>
 			<td>{{contact.title}}</td>
-			<td>{{contact.last_contacted}}</td>
+			<td>{{contact.last_contacted | date:'medium'}}</td>
 			<td>{{contact.resp_status}}</td>
-			<td>{{contact.nas_date}}</td>
+			<td>{{contact.nas_date | date:'medium'}}</td>
 			<td>
 				<a class='btn btn-success' href="#/contacts/{{contact.id}}/edit" type="button">Update</a>
 				<button class='btn btn-danger' ng-click='deleteContact(contact.id)'>Delete</button>

@@ -1,9 +1,9 @@
-<h1>Welcome to the RSG Job Application Tracker</h1>
+<div class="jumbotron home-jumbo">
+	<h2>Welcome <span style="color:blue"><%= current_user.email %></span> to the RSG Job Application Tracker</h2>
 
-<h2>Your email is <%= current_user.email %></h2>
-
-<div ng-app='rsgApp'>
-	<h3>Job Search Activity Tracker</h3>
-	<a href='#/partial1'>Track by Company</a> | <a href='#/partial2'>Track by Contact</a> | <a href='#partial3'>Add Job Opportunity</a> | <a href='#partial4'>Add Contact</a>
-	<div ng-view></div>
-</div>
+	<div>
+		<h3 style="color:green">Job Search Activity Tracker</h3>
+		<br>
+		<a href='#/partial1'>Track by Company</a> | <a href='#/partial2'>Track by Contact</a> | <a href='#partial3'>Add Job Opportunity</a> | <a href='#partial4'>Add Contact</a>
+		<div ng-view></div>
+	</div>
