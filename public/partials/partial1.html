@@ -16,7 +16,7 @@
 			<td>{{job.app_date | date:'medium'}}</td>
 			<td>{{job.resp_status}}</td>
 			<td>{{job.primary}}</td>
-			<td>{{job.nas_date}}</td>
+			<td>{{job.nas_date | date:'medium'}}</td>
 			<td>
 				<a class="btn btn-primary" type="button" href='#/jobShow/{{job.id}}'>Show</a>
 				<a class="btn btn-success" type="button" href="#/jobs/{{job.id}}/edit">Update</a>
