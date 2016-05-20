@@ -1,7 +1,5 @@
-app.controller('calendarsController', function($scope, $animate){
-  	angular.element('startDate').$dirty = true
-  	angular.element('startDate').$touched = true
-  	
+app.controller('calendarsController', function($scope, $animate, $timeout){
+
 	$scope.createEvent = function(newEvent){
 		console.log(newEvent);
 		console.log($scope.newEvent);
