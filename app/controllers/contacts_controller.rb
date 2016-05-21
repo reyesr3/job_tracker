@@ -3,7 +3,9 @@ class ContactsController < ApplicationController
 		render_contacts
 	end
 	def create
-		Contact.create(contact_params)
+		contact1 = Contact.new(contact_params)
+		contact1.user = User.find(current_user.id)
+		contact1.save
 		render_contacts
 	end
 	def show

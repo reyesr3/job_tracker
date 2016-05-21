@@ -4,11 +4,40 @@
 	<h3>Contact's Title: {{contact.title}}</h3>
 	<h3>Contact's Company Name: {{contact.company}}</h3>
 	<h3>Contact's Linkedin: {{contact.contact_link}}</h3>
-	<h3>How did you meet your contact? {{contact.how_met}}</h3>
+	<h3>How did you meet your contact? {{contact.how_met}}</h3>	
 	<h3>First Contacted Date: {{contact.last_contacted}}</h3>
 	<h3>Date of Planned Followup: {{contact.nas_date}}</h3>
 	<h3>Response Status: {{contact.resp_status}}</h3>
 	<div class='form-group'>
 		<button class='btn btn-success btn-lg' ng-click='updateContact(contact.id)'>Update Contact</button>
 	</div>
+	<h1>Add Job Connection</h1>
+	<div class="form-group">
+		<form>
+			<select ng-model="jobID" ng-options="job.company for job in jobs">
+<!-- 				<option ng-repeat="job in jobs" value="{{job.id}}" ng-if="false">{{job.company}}</option> -->
+			</select>
+		<button ng-click="addRelationship(contact.id, jobID.id)">Add Connection</button>
+		</form>
+		<h2></h2>
+		
+		<!-- Error Message -->
+		<div ng-show="showMessages" class="alert">
+	    	<p>{{myMessages}}</p>
+		</div>
+		
+		<table class='table table-hover table-bordered'>
+			<tr>
+				<th>Company</th>
+				<th>Action</th>
+			</tr>
+			<tr ng-repeat='relationship in relationships'>
+				<td><a href="">{{relationship.company}}</a></td>
+				<td>
+					<button class="btn btn-danger" ng-click="deleteRelationship(contact.id, relationship.id)">Delete</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
 </div>

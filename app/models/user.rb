@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 
   	has_many :jobs
   	has_many :contacts
+  	has_many :relationships
 end

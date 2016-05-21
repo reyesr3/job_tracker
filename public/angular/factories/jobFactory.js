@@ -20,7 +20,6 @@ app.factory('jobFactory', function($http, $routeParams){
 	}
 
 	factory.update = function(id, jobInfo, callback) {
-		console.log(jobInfo);
 		$http.post('/jobs/'+id, jobInfo).success(function(output){
 			callback(output)
 		})
@@ -28,6 +27,13 @@ app.factory('jobFactory', function($http, $routeParams){
 
 	factory.delete = function(jobID, callback) {
 		$http.delete('/jobs/'+jobID).success(function(output) {
+			callback(output)
+		})
+	}
+
+	factory.getJobs = function(info, callback) {
+		console.log(info)
+		$http.get('/jobsInfo', {params:{info: info}}).success(function(output) {
 			callback(output)
 		})
 	}

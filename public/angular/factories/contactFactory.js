@@ -1,4 +1,4 @@
-app.factory('contactFactory', function($http, $location){
+app.factory('contactFactory', function($http){
 	var factory = {};
 	factory.index = function(callback) {
 		$http.get('/contacts').success(function(output){
@@ -16,7 +16,6 @@ app.factory('contactFactory', function($http, $location){
 		})
 	}
 	factory.update = function(id, contactInfo, callback) {
-		console.log(contactInfo);
 		$http.post('/contacts/'+id, contactInfo).success(function(output){
 			callback(output)
 		})
@@ -32,5 +31,6 @@ app.factory('contactFactory', function($http, $location){
 			callback(output);
 		})
 	}
+
 	return factory;
 })
