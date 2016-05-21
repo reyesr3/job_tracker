@@ -6,7 +6,16 @@ class JobsController < ApplicationController
 		Job.create(job_params)
 		render_jobs
 	end
-
+	def show
+		render json: Job.find(params[:id]) 
+	end	
+	def edit
+		render json: Job.find(params[:id])
+	end
+	def update
+		@newInfo = Job.find(params[:id]);
+		render json: @newInfo.update(job_params)
+	end
 	def destroy
 		Job.find(params[:id]).destroy
 		render_jobs
@@ -19,6 +28,6 @@ class JobsController < ApplicationController
 		end
 
 		def job_params
-			params.require(:job).permit(:company, :company_link, :position, :position_link, :app_date, :primary, :nas, :nas_date)
+			params.require(:job).permit(:company, :company_link, :position, :position_link, :app_date, :primary, :nas, :nas_date, :resp_status)
 		end
 end
