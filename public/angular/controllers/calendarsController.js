@@ -1,7 +1,8 @@
-app.controller('calendarsController', function($scope, $animate, $timeout){
-
+app.controller('calendarsController', function($scope, $animate, $timeout, calendarFactory){
 	$scope.createEvent = function(newEvent){
-		console.log(newEvent);
-		console.log($scope.newEvent);
+		calendarFactory.createEvent(newEvent);
+	}
+	$scope.googleLogin = function(){
+		calendarFactory.googleLogin()
 	}
 })

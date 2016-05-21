@@ -1,4 +1,5 @@
 <div class="container">
+	<a href="/calendars/googlelogin">Google Login</a>
     <div class="row">
         <div class='col-sm-6'>
         	<form ng-submit="createEvent(newEvent)" name="eventForm"> 
@@ -10,14 +11,14 @@
 	            	</div>
 	            	<label>Start Date:</label>
 	                <div class='input-group date' id='datetimepicker1'>
-	                    <input type='datetime' class="form-control" ng-model="newEvent.startDate"id="startDate" id="startDate" />
+	                    <input type='datetime' class="form-control" ng-model="newEvent.startDate" id="startDate" datepicker-start=""/>
 	                    <span class="input-group-addon">
 	                        <span class="glyphicon glyphicon-calendar"></span>
 	                    </span>
 	                </div>	
 	                	<label>End Date:</label>
 	                <div class='input-group date' id='datetimepicker2'>
-	                    <input type='text' class="form-control" ng-model="newEvent.endDate" name="endDate" required id="endDate"/>
+	                    <input type='datetime' class="form-control" ng-model="newEvent.endDate" name="endDate" datepicker-end=""/>
 	                    <span class="input-group-addon">
 	                        <span class="glyphicon glyphicon-calendar"></span>
 	                    </span>
@@ -28,12 +29,20 @@
         </div>
         <script type="text/javascript">
             $(document).ready(function(){
-            	$('#datetimepicker1').trigger('input')
+            	moment().format();
 	            $(function () {
-	                $('#datetimepicker1').datetimepicker();
+	                $('#datetimepicker1').datetimepicker(
+		                	{
+		                		format: 'YYYY-MM-DDTHH:mm:ssZ',
+							}
+						);
 	             })
 	            $(function () {
-	                $('#datetimepicker2').datetimepicker();
+	                $('#datetimepicker2').datetimepicker(
+		                	{
+		                		format: 'YYYY-MM-DDTHH:mm:ssZ',
+							}
+	                	);
 	            });
 	        })
         </script>

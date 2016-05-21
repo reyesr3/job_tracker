@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #gems for datetime picker
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+#gem for the google client api
+gem 'google-api-client', '~> 0.9.6', require: 'google/apis/calendar_v3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
