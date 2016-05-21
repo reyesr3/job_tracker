@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   post 'interactions' => 'interactions#create'
   get 'interactions' => 'interactions#index'
   delete 'interactions/:id' =>'interactions#destroy'
+  post '/calendars' => 'calendars#addevent'
+  get '/calendars/googlelogin' => 'calendars#redirect'
+  get '/oauthcallback' => 'calendars#callback'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

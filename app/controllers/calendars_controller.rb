@@ -1,5 +1,4 @@
 class CalendarsController < ApplicationController
-	class CalendarController < ApplicationController
 	def index
 	end
 
@@ -28,7 +27,7 @@ class CalendarsController < ApplicationController
 
 	  session[:access_token] = response['access_token']
 
-	  redirect_to 'http://localhost:3000/calendar'
+	  redirect_to :back
 	end
 
 	def calendars
@@ -40,10 +39,12 @@ class CalendarsController < ApplicationController
 
 	  @calendar_list = service.list_calendar_lists
 
-	  render template: "calendar/redirect"
+	  redirect_to :back
 	end
 
 	def addevent
+		render json: {}
+
 		client = Signet::OAuth2::Client.new(access_token: session[:access_token])
 		service = Google::Apis::CalendarV3::CalendarService.new
 		service.authorization = client
@@ -67,8 +68,6 @@ class CalendarsController < ApplicationController
 		)
 
 		result = service.insert_event('primary', event)
-		puts "Event created: #{result.html_link}"
-		redirect_to "/"
-
-	end
+		puts "Event created: #{result.html_link}"	
+    end
 end

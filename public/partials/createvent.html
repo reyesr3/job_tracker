@@ -1,0 +1,50 @@
+<div class="container">
+	<a href="/calendars/googlelogin">Google Login</a>
+    <div class="row">
+        <div class='col-sm-6'>
+        	<form ng-submit="createEvent(newEvent)" name="eventForm"> 
+	            <div class="form-group">
+	            	<div>
+	            		<label>Event Name<input type="text" ng-model="newEvent.summary" ></label>
+	            		<label>Location<input type="text" ng-model="newEvent.location"></label>
+
+	            	</div>
+	            	<label>Start Date:</label>
+	                <div class='input-group date' id='datetimepicker1'>
+	                    <input type='datetime' class="form-control" ng-model="newEvent.startDate" id="startDate" datepicker-start=""/>
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>	
+	                	<label>End Date:</label>
+	                <div class='input-group date' id='datetimepicker2'>
+	                    <input type='datetime' class="form-control" ng-model="newEvent.endDate" name="endDate" datepicker-end=""/>
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+	            </div>
+            	<button>Submit Event</button>
+            </form>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            	moment().format();
+	            $(function () {
+	                $('#datetimepicker1').datetimepicker(
+		                	{
+		                		format: 'YYYY-MM-DDTHH:mm:ssZ',
+							}
+						);
+	             })
+	            $(function () {
+	                $('#datetimepicker2').datetimepicker(
+		                	{
+		                		format: 'YYYY-MM-DDTHH:mm:ssZ',
+							}
+	                	);
+	            });
+	        })
+        </script>
+    </div>
+</div>
