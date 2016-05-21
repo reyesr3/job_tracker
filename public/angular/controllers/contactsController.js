@@ -1,7 +1,13 @@
-app.controller('contactsController', function($scope, contactFactory, $routeParams, $location){
+app.controller('contactsController', function($scope, contactFactory, interactionFactory, $routeParams, $location){
+
+	$scope.isCollapsed = true;
 
 	contactFactory.index(function(json){
 		$scope.contacts = json;
+	})
+
+	interactionFactory.index(function(json){
+		$scope.interactions = json;
 	})
 
 	// Used for show contact page
@@ -10,6 +16,14 @@ app.controller('contactsController', function($scope, contactFactory, $routePara
 			$scope.contact = json;
 		})
 	}
+
+	// Used for show interaction page
+	// if($routeParams.id != undefined){
+	// 	interactionFactory.getInteraction($routeParams.id, function(json){
+	// 		$scope.interaction = json;
+	// 		console.log(json)
+	// 	})
+	// }
 
 	$scope.createContact = function(){
 		contactFactory.create($scope.newContact, function(json){
@@ -27,6 +41,28 @@ app.controller('contactsController', function($scope, contactFactory, $routePara
 	$scope.deleteContact = function(contactID){
 		contactFactory.delete(contactID, function(json) {
 			$scope.contacts = json;
+		})
+	}
+
+	// Functions for interactions
+	$scope.createInteraction = function(){
+		$scope.newInteraction.interaction.contact_id = $scope.contact.id;
+		console.log($scope.newInteraction);
+		interactionFactory.create($scope.newInteraction, function(json){
+			$scope.interactions = json;
+			$scope.newInteraction = {};
+		})
+	}
+	$scope.updateInteraction = function(interactionID){
+		interactionFactory.update(interactionID, $scope.updateInteractionInfo, function(json){
+			$scope.updateInteractionInfo = {};
+			$location.path('/partial2')
+			$scope.message = "Activity has been updated!";
+		})
+	}
+	$scope.deleteInteraction = function(interactionID){
+		interactionFactory.delete(interactionID, function(json) {
+			$scope.interactions = json;
 		})
 	}
 })

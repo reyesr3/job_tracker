@@ -11,4 +11,21 @@
 	<div class='form-group'>
 		<button class='btn btn-success btn-lg' ng-click='updateContact(contact.id)'>Update Contact</button>
 	</div>
+	<div class='form-group'>
+		<button class='btn btn-success btn-lg' ng-click='isCollapsed = !isCollapsed'>New Activity</button>
+		<div uib-collapse='isCollapsed'>
+			<div class='form-group'>
+				<label>Activity Notes</label>
+				<textarea class='form-control' ng-model='newInteraction.interaction.activity'></textarea>
+				<label>Activity Date</label>
+				<input class='form-control' type='date' ng-model='newInteraction.interaction.activity_date'>
+				<button class='btn btn-success btn-lg' ng-click='createInteraction()'>Add Activity</button>
+			</div>
+		</div>
+	</div>
+	<div class='form-group'>
+		<select>
+			<option  ng-repeat='interaction in interactions' value='{{interaction.id}}'>{{interaction.activity_date}}</option>
+		</select>
+	</div>
 </div>

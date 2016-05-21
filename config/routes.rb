@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post 'contacts/:id' => 'contacts#update'
   delete 'contacts/:id' => 'contacts#destroy'
   delete 'jobs/:id' => 'jobs#destroy'
+  post 'interactions' => 'interactions#create'
+  get 'interactions' => 'interactions#index'
+  delete 'interactions/:id' =>'interactions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
