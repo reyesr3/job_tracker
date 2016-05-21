@@ -36,7 +36,7 @@ class InteractionsController < ApplicationController
 		end
 
 		def interaction_params
-			params.require(:interaction).permit(:activity, :activity_date, :job_id, :contact_id)
+			params.require(:interaction).permit(:activity, :activity_date, :job_id, :contact_id, :subject)
 		end	
 
 end
