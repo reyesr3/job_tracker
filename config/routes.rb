@@ -11,15 +11,21 @@ Rails.application.routes.draw do
   get 'contacts/:id/edit' => 'contacts#edit'
   get 'jobs/:id' => 'jobs#show'
   get 'jobs/:id/edit' => 'jobs#edit'
+  get 'relationships/:id' => 'relationships#index'
+  get 'interactions' => 'interactions#index'
+  get '/calendars/googlelogin' => 'calendars#redirect'
+  get '/oauthcallback' => 'calendars#callback'
   post 'jobs' => 'jobs#create'
   post 'contacts' => 'contacts#create'
   post 'jobs/:id' => 'jobs#update'
   post 'contacts/:id' => 'contacts#update'
   post 'relationships/:id' => 'relationships#create'
-  get 'relationships/:id' => 'relationships#index'
+  post 'interactions' => 'interactions#create'
+  post '/calendars' => 'calendars#addevent'
   delete 'contacts/:id' => 'contacts#destroy'
   delete 'jobs/:id' => 'jobs#destroy'
   delete 'relationships/:id' => 'relationships#destroy'
+  delete 'interactions/:id' =>'interactions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

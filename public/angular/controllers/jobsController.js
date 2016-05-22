@@ -1,5 +1,6 @@
 // Controller Time
-app.controller('jobsController', function($scope, jobFactory, $routeParams, $location){
+app.controller('jobsController', function($scope, jobFactory, $routeParams, $location) {
+
 	jobFactory.index(function(json){
 		$scope.jobs = json;
 	})
@@ -14,6 +15,8 @@ app.controller('jobsController', function($scope, jobFactory, $routeParams, $loc
 		jobFactory.create($scope.newJob, function(json){
 			$scope.jobs = json;
 			$scope.newJob= {};
+			$scope.messages = "Job has been added!";
+			$location.path('/partial1')
 		})
 	}
 
@@ -21,7 +24,7 @@ app.controller('jobsController', function($scope, jobFactory, $routeParams, $loc
 		jobFactory.update(jobID, $scope.updateJobInfo, function(json){
 			$scope.updateJobInfo = {};
 			$location.path('/partial1')
-			$scope.message = "Job has been updated!";
+			$scope.messages = "Job has been updated!";
 		})
 	}
 
