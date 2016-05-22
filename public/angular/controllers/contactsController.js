@@ -66,7 +66,8 @@ app.controller('contactsController', function($scope, contactFactory, jobFactory
 	$scope.deleteRelationship = function(contactID, jobID){
 		relationshipFactory.delete(contactID, jobID, function(json){
 			$scope.relationships = json
-
+		})
+	}
 	// Functions for interactions
 	$scope.createInteraction = function(){
 		$scope.newInteraction.interaction.contact_id = $scope.contact.id;
