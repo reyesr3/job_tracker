@@ -31,12 +31,5 @@ app.factory('jobFactory', function($http, $routeParams){
 		})
 	}
 
-	factory.getJobs = function(info, callback) {
-		console.log(info)
-		$http.get('/jobsInfo', {params:{info: info}}).success(function(output) {
-			callback(output)
-		})
-	}
-
 	return factory;
 })

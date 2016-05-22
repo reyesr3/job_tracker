@@ -1,27 +1,36 @@
 class RelationshipsController < ApplicationController
 
 	def index
-		render json: Relationship.where(contact:Contact.find(params[:id]))
+		render_relationships
 	end
 
 	def create
-		info = Relationship.find_by(job: Job.find(params[:jobID]))
-		if(info)
-			flash[:createError] = "Company already exists"
-		else
-			Relationship.create(job: Job.find(params[:jobID]), contact:Contact.find(params[:contactID]), user:User.find(current_user.id))
-		end
+		# info = Contact.find(params[:id]).contact_companies.where(id: params[:jobID])
+		# puts '************************'
+		# puts info
+		# puts '************************'
+		# if(info)
+		# 	flash[:createError] = "Company already exists"
+		# else
+			
+		# end
+		create_relationships
 		render_relationships
 	end
 
 	def destroy
-		Relationship.find_by(job: Job.find(params[:jobID])).destroy
+		Relationship.find_by(job_id: Job.find(params[:jobID]), contact:Contact.find(params[:id])).destroy
 		render_relationships
 	end
 
 	private
+
+		def create_relationships
+			Relationship.create(job: Job.find(params[:jobID]), contact:Contact.find(params[:id]), user:User.find(current_user.id))
+		end
+
 		def render_relationships
-			
+			render json: Contact.find(params[:id]).contact_companies
 		end
 
 end	

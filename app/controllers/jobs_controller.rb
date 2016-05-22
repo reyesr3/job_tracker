@@ -20,12 +20,6 @@ class JobsController < ApplicationController
 		Job.find(params[:id]).destroy
 		render_jobs
 	end
-	def jobsInfo
-		puts '*****************************'
-		puts 'here'
-		puts params
-		puts '*****************************'
-	end
 
 	private
 

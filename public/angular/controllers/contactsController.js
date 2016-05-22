@@ -1,6 +1,5 @@
 app.controller('contactsController', function($scope, contactFactory, jobFactory, relationshipFactory, $routeParams, $location){
 
-	var info = [];
 	var createError = "";
 
 	contactFactory.index(function(json){
@@ -21,22 +20,8 @@ app.controller('contactsController', function($scope, contactFactory, jobFactory
 			$scope.jobs = json;
 		})
 
-		// This function takes all Job ID's and Queries for
-		// Contact Show Page -> connections table
 		relationshipFactory.index($routeParams.id, function(json){
-			// Need condition because info is emptry, will cause 
-			// get error in Console
-			// var condition = false;
-			// json.forEach(function(json){
-			// 	info.push(json.job_id);
-			// 	condition = true;
-			// })
-
-			if(json){
-				jobFactory.getJobs(json, function(json){
-					$scope.relationships = json;
-				})
-			}
+			$scope.relationships = json;
 		})
 	}
 
@@ -60,37 +45,14 @@ app.controller('contactsController', function($scope, contactFactory, jobFactory
 	}
 
 	$scope.addRelationship = function(contactID, jobID){
-		info = []
 		relationshipFactory.create(contactID, jobID, function(json){
-			json.forEach(function(json){
-				info.push(json.job_id);
-			})
-
-			jobFactory.getJobs(info, function(json){
-				$scope.relationships = json;
-			})
-			// Reset so array doesn't keep values
-			info = []
+			$scope.relationships = json;
 		})
 	}
 
 	$scope.deleteRelationship = function(contactID, jobID){
-		info = []
 		relationshipFactory.delete(contactID, jobID, function(json){
-			json.forEach(function(json){
-				info.push(json.job_id);
-			})
-
-			if(info.length == 0){
-				$scope.relationships = []
-			}
-			else{
-				jobFactory.getJobs(info, function(json){
-					$scope.relationships = json;
-				})
-			}
-			// Reset so array doesn't keep values
-			info = []
+			$scope.relationships = json
 		})
 	}
 })
