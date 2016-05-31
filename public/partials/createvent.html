@@ -1,29 +1,40 @@
 <div class="container">
 	<a href="/calendars/googlelogin">Google Login</a>
     <div class="row">
-        <div class='col-sm-6'>
-        	<form ng-submit="createEvent(newEvent)" name="eventForm"> 
+        <div class='center-form'>
+        	<h2>Create an Event</h2>
+        	<br>
+        	<form ng-submit="createEvent(newEvent)" name="eventForm" class="form-horizontal"> 
 	            <div class="form-group">
-	            	<div>
-	            		<label>Event Name<input type="text" ng-model="newEvent.summary" ></label>
-	            		<label>Location<input type="text" ng-model="newEvent.location"></label>
-
-	            	</div>
-	            	<label>Start Date:</label>
-	                <div class='input-group date' id='datetimepicker1'>
+            		<label class="col-sm-4 control-label">Name</label>
+            		<div class="col-sm-8">
+            			<input class="form-control" type="text" ng-model="newEvent.summary" >
+            		</div>
+            	</div>
+            	<div class="form-group">
+            		<label class="col-sm-4 control-label">Location</label>
+            		<div class='col-sm-8'>
+            			<input class="form-control" type="text" ng-model="newEvent.location">
+            		</div>
+            	</div>
+            	<div class="form-group">
+            		<label class="col-sm-4 control-label">Start Date:</label>
+	                <div class='input-group date col-sm-7' id='datetimepicker1'>
 	                    <input type='datetime' class="form-control" ng-model="newEvent.startDate" id="startDate" datepicker-start=""/>
 	                    <span class="input-group-addon">
 	                        <span class="glyphicon glyphicon-calendar"></span>
 	                    </span>
-	                </div>	
-	                	<label>End Date:</label>
-	                <div class='input-group date' id='datetimepicker2'>
+	                </div>
+            	</div>
+            	<div class="form-group">
+            		<label class="col-sm-4 control-label">End Date:</label>
+	                <div class='input-group date col-sm-7' id='datetimepicker2'>
 	                    <input type='datetime' class="form-control" ng-model="newEvent.endDate" name="endDate" datepicker-end=""/>
 	                    <span class="input-group-addon">
 	                        <span class="glyphicon glyphicon-calendar"></span>
 	                    </span>
 	                </div>
-	            </div>
+            	</div>
             	<button>Submit Event</button>
             </form>
         </div>

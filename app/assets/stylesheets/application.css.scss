@@ -49,7 +49,20 @@
     }
   }
 }
-
+.center-form{
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  h2{
+    color: red;
+  }
+  form{
+    width: 300px;
+    input{
+      text-align: center;
+    }
+  }
+}
 .home-jumbo{
   margin: 0 auto;
   padding: 0 auto;
