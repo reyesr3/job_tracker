@@ -1,0 +1,62 @@
+<div class="container">
+
+    <div class="row">
+        <div class='center-form'>
+        	<h2>Create an Event</h2>
+        	<br>
+        	<form ng-submit="createEvent(newEvent)" name="eventForm" class="form-horizontal"> 
+	            <div class="form-group eventGroup">
+            		<label class="col-sm-4 control-label">Name:</label>
+            		<div class="col-sm-8">
+            			<input class="form-control" type="text" ng-model="newEvent.summary" >
+            		</div>
+            	</div>
+            	<div class="form-group eventGroup">
+            		<label class="col-sm-4 control-label">Location:</label>
+            		<div class='col-sm-8'>
+            			<input class="form-control" type="text" ng-model="newEvent.location">
+            		</div>
+            	</div>
+            	<div class="form-group eventGroup">
+            		<label class="col-sm-4 control-label">Start Date:</label>
+	                <div class='input-group date col-sm-7' id='datetimepicker1'>
+	                    <input type='datetime' class="form-control" ng-model="newEvent.startDate" id="startDate" datepicker-start=""/>
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+            	</div>
+            	<div class="form-group eventGroup">
+            		<label class="col-sm-4 control-label">End Date:</label>
+	                <div class='input-group date col-sm-7' id='datetimepicker2'>
+	                    <input type='datetime' class="form-control" ng-model="newEvent.endDate" name="endDate" datepicker-end=""/>
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+            	</div>
+                <button class='btn btn-primary event'><a href="/calendars/googlelogin">Google Login</a></button>
+            	<button class='btn btn-primary'>Submit Event</button>
+            </form>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            	moment().format();
+	            $(function () {
+	                $('#datetimepicker1').datetimepicker(
+		                	{
+		                		format: 'YYYY-MM-DDTHH:mm:ssZ',
+							}
+						);
+	             })
+	            $(function () {
+	                $('#datetimepicker2').datetimepicker(
+		                	{
+		                		format: 'YYYY-MM-DDTHH:mm:ssZ',
+							}
+	                	);
+	            });
+	        })
+        </script>
+    </div>
+</div>

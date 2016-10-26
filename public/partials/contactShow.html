@@ -1,0 +1,69 @@
+<div class='container'>
+	<h3>Contact Info</h3>
+	<table class='table table-hover table-bordered'>
+		<tr>
+			<td>{{contact.first_name}} {{contact.last_name}}</td>
+			<td>{{contact.title}}</td>
+			<td>{{contact.company}}</td>
+			<td><a href='http://www.{{contact.contact_link}}' target='_blank'>LinkedIn</a></td>
+		</tr>
+		<tr>
+			<td>Date of First Contact: {{contact.last_contacted | date: 'shortDate'}}</td>
+			<td>Date of Planned Followup: {{contact.nas_date | date: 'shortDate'}}</td>
+			<td>Response Status: {{contact.resp_status}}</td>
+			<td>Contact Source: {{contact.how_met}}</td>
+		</tr>
+	</table>
+	<div class='form-group'>
+		<button class='btn btn-success btn-lg' ng-click='updateContact(contact.id)'>Update Contact Info</button>
+	</div>
+	<h3>Activities for this Contact</h3>
+	<div class='form-group'>
+		<ul style='list-style:none; padding-left:0;'>
+			<li ng-repeat='interaction in interactions' value='{{interaction.id}}'><a href='#/interaction/{{interaction.id}}'>{{interaction.subject}} Date: {{interaction.activity_date | date: 'shortDate'}}</a></li>
+		</ul>
+	</div>
+	<div class='form-group'>
+		<button class='btn btn-success btn-lg' ng-click='isCollapsed = !isCollapsed'>New Activity</button>
+		<div uib-collapse='isCollapsed'>
+			<div class='form-group'>
+				<label>Subject</label>
+				<input type='text' class='form-control' ng-model='newInteraction.interaction.subject'>
+				<label>Activity Notes</label>
+				<textarea class='form-control' ng-model='newInteraction.interaction.activity'></textarea>
+				<label>Activity Date</label>
+				<input class='form-control' type='date' ng-model='newInteraction.interaction.activity_date'>
+				<button class='btn btn-success btn-lg' ng-click='createInteraction()'>Add Activity</button>
+			</div>
+		</div>
+	</div>
+	<h1>Add Job Connection</h1>
+	<div class="form-group">
+		<form>
+			<select ng-model="jobID" ng-options="job.company for job in jobs">
+<!-- 				<option ng-repeat="job in jobs" value="{{job.id}}" ng-if="false">{{job.company}}</option> -->
+			</select>
+		<button ng-click="addRelationship(contact.id, jobID.id)">Add Connection</button>
+		</form>
+		<h2></h2>
+		
+		<!-- Error Message -->
+		<div ng-show="showMessages" class="alert">
+	    	<p>{{myMessages}}</p>
+		</div>
+		
+		<table class='table table-hover table-bordered'>
+			<tr>
+				<th>Company</th>
+				<th>Action</th>
+			</tr>
+			<tr ng-repeat='relationship in relationships'>
+				<td><a href="">{{relationship.company}}</a></td>
+				<td>
+					<button class="btn btn-danger" ng-click="deleteRelationship(contact.id, relationship.id)">Delete</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</div>

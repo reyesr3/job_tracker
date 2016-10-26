@@ -1,0 +1,206 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require 'bootstrap-sass-official'
+*/
+/*@import "bootstrap-sprockets";
+@import "bootstrap";*/
+*{
+  margin: 0px auto;
+
+}
+
+.jumbotron.home-jumbo {
+    padding-top: 10px;
+    background-color: white;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+.table th {
+  background-color: #006DCC;
+  color: white;
+  border-left: none;
+}
+
+.add {
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin-left: 20px;
+
+  input, textarea {
+    width: 50%;
+  }
+}
+
+#user_email, #user_password {
+    width: 100%;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+.navbar.transparent{
+   background: rgba(0,0,0,0.1);
+   border-radius: none;
+   border: none;
+}
+
+.nav-box {
+  font-family: "Roboto", serif;
+  font-size: large;
+}
+
+
+.btn-primary a {
+  color: white;
+}
+
+.add, label {
+  text-align: left;
+}
+.navbar .btn, a {
+}
+
+.login-box {
+  padding: 5px;
+  background-color: white;
+  opacity: .9;
+  width: 30%;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+
+.login-box .checkbox {
+  margin-right: 170px;
+}
+
+.login-box .btn {
+  height: 45px;
+  width: 80px;
+  margin-left: 220px;
+}
+
+.links {
+  display: inline-block;
+}
+
+.links a {
+  float: left;
+  margin-right: 160px;
+}
+
+.background-full-screen{
+  background: url(tracker.jpg) no-repeat center fixed;
+  background-position: 0% 8%;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 0;
+  h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  form{
+    width: 300px;
+    input{
+      text-align: center;
+    }
+  }
+  height: 570px;
+}
+
+.center-form{
+  h2 {
+    margin-bottom: 2px;
+  }
+  vertical-align: middle;
+  display: block;
+  padding-bottom: 10px;
+  form{
+    width: 300px;
+    input{
+      text-align: center;
+    }
+  }
+
+  .eventGroup label {
+    text-align: left;
+  }
+
+  .eventGroup input {
+    margin-right: 50px;
+  }
+
+  .eventGroup .form-control {
+    width: 100%;
+  }
+
+}
+
+
+.home-jumbo{
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+  height: 900px;
+}
+
+
+.home-jumbo label {
+    font-family:'Cabin', serif;
+    text-align: left;
+  }
+
+
+
+footer {
+ padding-top: 10px;
+ padding-left: 15px;
+ margin-top: 0px;
+ border-top: 1px solid silver;
+}
+
+.light-text {
+	color: white
+}
+
+.event {
+  margin-left: 65px;
+  margin-right: 5px;
+}
+

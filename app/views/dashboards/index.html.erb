@@ -1,0 +1,9 @@
+<div class="jumbotron home-jumbo">
+	<h2>Welcome, <%= current_user.email %>!</h2>
+	<br>
+<div>
+	<div class="nav-box">
+		<a href='#/partial1'>Track by Company</a> | <a href='#/partial2'>Track by Contact</a> | <a href='#partial3'>Add Job Opportunity</a> | <a href='#partial4'>Add Contact</a> | <a href="#createvent">Create Event</a>
+	</div>
+	<div ng-view></div>
+</div>

@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  authenticated :user do
+    root to: 'dashboards#index', as: :authenticated_root
+  end
+  root to: redirect('/users/sign_in')
+  get 'jobs' => 'jobs#index'
+  get 'contacts' => 'contacts#index'
+  get 'contacts/:id' => 'contacts#show'
+  get 'contacts/:id/edit' => 'contacts#edit'
+  get 'jobs/:id' => 'jobs#show'
+  get 'jobs/:id/edit' => 'jobs#edit'
+  get 'relationships/:id' => 'relationships#index'
+  get 'interactions' => 'interactions#index'
+  get '/calendars/googlelogin' => 'calendars#redirect'
+  get '/oauthcallback' => 'calendars#callback'
+  post 'jobs' => 'jobs#create'
+  post 'contacts' => 'contacts#create'
+  post 'jobs/:id' => 'jobs#update'
+  post 'contacts/:id' => 'contacts#update'
+  post 'relationships/:id' => 'relationships#create'
+  post 'interactions' => 'interactions#create'
+  post '/calendars' => 'calendars#addevent'
+  delete 'contacts/:id' => 'contacts#destroy'
+  delete 'jobs/:id' => 'jobs#destroy'
+  delete 'relationships/:id' => 'relationships#destroy'
+  delete 'interactions/:id' =>'interactions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

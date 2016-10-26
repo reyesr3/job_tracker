@@ -1,0 +1,17 @@
+<div>
+	<h3>Company Name: {{ job.company }}</h3>
+	<h3>Company Website: {{ job.company_link }}</h3>
+	<h3>Position Applying For: {{ job.position }}</h3>
+	<h3>Job Posting: {{ job.position_link }}</h3>
+	<h3>Primary Contact: {{ job.primary }}</h3>
+	<h3>Date Application Sent: {{ job.app_date | date:'medium' }}</h3>
+	<h3>Planned Followup: {{ job.nas }}</h3>
+	<h3>Date of Planned Followup: {{ job.nas_date | date:'medium' }}</h3>
+	<h3>Response Status: {{ job.resp_status }}</h3>
+	<div class='form-group'>
+		<a class='btn btn-success btn-lg' href="#/jobs/{{job.id}}/edit" type="button">Update Job</a>
+	</div>
+	<div class='form-group'>
+		<a class='btn btn-success btn-lg' href='#/jobs/{{job.id}}/add' type='button'>Add Activity</a>
+	</div>
+</div>
