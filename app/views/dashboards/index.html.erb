@@ -1,11 +1,9 @@
 <div class="jumbotron home-jumbo">
-	<h2>Welcome <span style="color:blue"><%= current_user.email %></span> to the RSG Job Application Tracker</h2>
-
-<h2>Your email is <%= current_user.email %></h2>
-
-<div>
-	<h3 style="color:green">Job Search Activity Tracker</h3>
+	<h2>Welcome, <%= current_user.email %>!</h2>
 	<br>
-	<a href='#/partial1'>Track by Company</a> | <a href='#/partial2'>Track by Contact</a> | <a href='#partial3'>Add Job Opportunity</a> | <a href='#partial4'>Add Contact</a> | <a href="#createvent">Create Event</a>
+<div>
+	<div class="nav-box">
+		<a href='#/partial1'>Track by Company</a> | <a href='#/partial2'>Track by Contact</a> | <a href='#partial3'>Add Job Opportunity</a> | <a href='#partial4'>Add Contact</a> | <a href="#createvent">Create Event</a>
+	</div>
 	<div ng-view></div>
 </div>

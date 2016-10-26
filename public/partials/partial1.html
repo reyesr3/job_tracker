@@ -7,16 +7,16 @@
 			<th>Application Date</th>
 			<th>Response Y/N?</th>
 			<th>Primary Contact</th>
-			<th>Planned Followup</th>
+			<th>Planned Follow-up</th>
 			<th>Actions</th>
 		</tr>
 		<tr ng-repeat='job in jobs'>
 			<td><a href='http://www.{{job.company_link}}' target='_blank'>{{job.company}}</a></td>
 			<td><a href='http://www.{{job.position_link}}' target='_blank'>{{job.position}}</a></td>
-			<td>{{job.app_date | date:'medium'}}</td>
+			<td>{{job.app_date | date:'longDate'}}</td>
 			<td>{{job.resp_status}}</td>
 			<td>{{job.primary}}</td>
-			<td>{{job.nas_date | date:'medium'}}</td>
+			<td>{{job.nas_date | date:'longDate'}}</td>
 			<td>
 				<a class="btn btn-primary" type="button" href='#/jobShow/{{job.id}}'>Show</a>
 				<a class="btn btn-success" type="button" href="#/jobs/{{job.id}}/edit">Update</a>

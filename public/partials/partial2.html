@@ -7,16 +7,16 @@
 			<th>Title</th>
 			<th>Last Contacted</th>
 			<th>Response Y/N?</th>
-			<th>Planned Followup</th>
+			<th>Planned Follow-up</th>
 			<th>Actions</th>
 		</tr>
 		<tr ng-repeat='contact in contacts'>
 			<td><a href='#/contactShow/{{contact.id}}'>{{contact.first_name}} {{contact.last_name}}</a></td>
 			<td>{{contact.company}}</td>
 			<td>{{contact.title}}</td>
-			<td>{{contact.last_contacted | date:'medium'}}</td>
+			<td>{{contact.last_contacted | date:'longDate'}}</td>
 			<td>{{contact.resp_status}}</td>
-			<td>{{contact.nas_date | date:'medium'}}</td>
+			<td>{{contact.nas_date | date:'longDate'}}</td>
 			<td>
 				<a class='btn btn-success' href="#/contacts/{{contact.id}}/edit" type="button">Update</a>
 				<button class='btn btn-danger' ng-click='deleteContact(contact.id)'>Delete</button>
