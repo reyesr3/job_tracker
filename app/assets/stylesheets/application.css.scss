@@ -48,13 +48,10 @@ table {
   margin-left: 20px;
 
   input, textarea {
-    width: 50%;
+    width: 100%;
   }
 }
 
-#user_email, #user_password {
-    width: 100%;
-}
 
 a:hover {
   text-decoration: none;
@@ -92,24 +89,52 @@ a:hover {
   border: 1px solid silver;
 }
 
+.login-box h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .login-box .checkbox {
-  margin-right: 170px;
+  margin-right: 140px;
 }
 
 .login-box .btn {
   height: 45px;
-  width: 80px;
-  margin-left: 220px;
+  width: 90px;
+  margin-left: 210px;
 }
 
-.links {
+.login-box .btn-2 {
+  width: 100px;
+  margin-left: 200px;
+}
+
+.login-box .btn-3 {
+  width: 170px;
+  margin-left: 130px;
+}
+
+.links, .links-2 {
   display: inline-block;
+  margin-bottom: 5px;
+  margin-left: 50px;
+}
+
+.links-2 {
+  margin-top: 10px;
 }
 
 .links a {
   float: left;
   margin-right: 160px;
 }
+
+.links-2 a {
+  float: left;
+  margin-right: 220px;
+}
+
+
 
 .background-full-screen{
   background: url(tracker.jpg) no-repeat center fixed;
@@ -169,9 +194,7 @@ a:hover {
   .eventGroup .form-control {
     width: 100%;
   }
-
 }
-
 
 .home-jumbo{
   margin: 0 auto;
